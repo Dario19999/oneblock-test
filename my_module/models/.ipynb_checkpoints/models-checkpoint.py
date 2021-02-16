@@ -7,6 +7,7 @@ class my_module(models.Model):
     _name = 'my_module.my_module'
     _description = 'my_module.my_module'
 
+    start_datetime = fields.Datetime('Start time', default=lambda self: fields.Datetime.now())
     name = fields.Char()
     value = fields.Integer()
     value2 = fields.Float(compute="_value_pc", store=True)
